@@ -1,0 +1,100 @@
+h2 {
+    /* font-family: Poppins; */
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 51px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+
+.side-bacground {
+    background: linear-gradient(180deg, #35142C 0%, #612550 25%, #497284 75%, #31BFB7 100%);
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.logInForm {
+    display: flex;
+    height: 100vh;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+
+.rounded-input {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+}
+
+.rounded-input-error {
+    border-radius: 10px;
+    border: 1px solid #9A0B11;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: red 0px 0px 1px;
+}
+
+.rounded-alert {
+    border-radius: 19px;
+    border: 1px solid #9A0B11;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: center;
+    box-shadow: red 0px 0px 2px;
+}
+
+.rounded-input:focus {
+    border-color: #4169E1
+}
+
+.rounded-btn {
+    border-radius: 10px;
+    border: 1px solid #000000;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #612550;
+    transform: box-shadow 0.5s, transform 0.5s ease;
+}
+
+.rounded-btn:hover {
+    background-color: #36142d;
+    box-shadow: #000000 0px 0px 4px;
+    transform: translateY(-2px);
+}
+
+
+
+.label-text {
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    color: #000000;
+}

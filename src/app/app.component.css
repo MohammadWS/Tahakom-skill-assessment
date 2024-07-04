@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+side-image {
+    /* flex: 1; */
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+}
+
+log-in {
+    /* flex: 3; */
+    padding: 20px;
+    background-color: #0000;
+}
+
+
+  
+
