@@ -28,7 +28,7 @@ export class LogInComponent implements OnInit {
     this.logInForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)],],
-      rememberMe: []
+      rememberMe: false
     });
 
   }
