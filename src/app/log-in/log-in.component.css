@@ -1,5 +1,4 @@
 h2 {
-    /* font-family: Poppins; */
     font-size: 34px;
     font-weight: 500;
     line-height: 51px;
@@ -7,11 +6,11 @@ h2 {
     text-align: center;
 }
 
-
 .side-bacground {
     background: linear-gradient(180deg, #35142C 0%, #612550 25%, #497284 75%, #31BFB7 100%);
     flex: 1;
 }
+
 
 .container {
     display: flex;
@@ -25,12 +24,6 @@ h2 {
     flex: 1;
     justify-content: center;
     align-items: center;
-    /* max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     flex-direction: column;
 }
 
@@ -89,12 +82,22 @@ label {
     transform: translateY(-2px);
 }
 
-
-
 .label-text {
     font-size: 14px;
     font-weight: 650;
     line-height: 21px;
     letter-spacing: 0.03em;
     color: #000000;
+}
+
+.hint-text {
+    color: #636364;
+}
+
+.checkbox-btn[dir=ltr] {
+    margin: 0;
+}
+
+.checkbox-btn[dir=rtl] {
+    margin: 1px;
 }

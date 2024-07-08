@@ -4,17 +4,53 @@
 }
 
 side-image {
-    /* flex: 1; */
+    
     background-color: #f4f4f4;
     border-right: 1px solid #ddd;
 }
 
 log-in {
-    /* flex: 3; */
+    
     padding: 20px;
     background-color: #0000;
 }
 
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
 
-  
 
+.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+
+.lang-btn {
+    border-radius: 10px;
+    border: 1px solid #000000;
+    padding: 8px;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #497284 25%, #31BFB7 100%);
+    transform: box-shadow 0.5s, transform 0.5s ease-in-out;
+    color: white;
+}
+
+.lang-btn:hover {
+    background-color: #36142d;
+    box-shadow: #000000 0px 0px 4px;
+    transform: translateY(-3px);
+}
+
+.lang-btn-ltr {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
+
+.lang-btn-rtl {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+}

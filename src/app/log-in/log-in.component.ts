@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LogInModel } from '../models/log-in-model';
-import { trigger, animate, state, style, transition } from '@angular/animations';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-log-in',
@@ -10,8 +11,12 @@ import { trigger, animate, state, style, transition } from '@angular/animations'
   styleUrls: ['./log-in.component.css'],
 })
 export class LogInComponent implements OnInit {
+
   logInForm: FormGroup = new FormGroup({});
-  isError: boolean = false;
+  usernameError: boolean = false;
+  passWordError: boolean = false;
+  browserLanguage: String;
+  
   logInCredintials: LogInModel = {
     username: '',
     password: '',
@@ -21,29 +26,35 @@ export class LogInComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    public translate: TranslateService,
+    
+
   ) {
+    translate.addLangs(['en', 'ar']);
+    translate.setDefaultLang('en');
+    
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang && browserLang.match(/en|ar/) ? browserLang : 'en');
+    this.browserLanguage = browserLang ?? 'en';
   }
 
   ngOnInit() {
     this.logInForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      username: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
       password: ['', [Validators.required, Validators.minLength(8)],],
-      rememberMe: []
+      rememberMe: false
     });
 
   }
   onSubmit() {
-    console.log(this.logInForm.value);
     if (this.logInForm.invalid) {
-      this.isError = true;
-      // [ngClass]="{'rounded-input-error': ((logInForm.get('password')?.invalid && logInForm.get('password')?.touched) || (logInForm.get('password')?.value.length <3 && logInForm.get('password')?.touched && logInForm.get('password')?.value.length !=0)  )}"
-      // *ngIf="(logInForm.get('username')?.invalid && logInForm.get('username')?.touched) || logInForm.get('password')?.invalid && logInForm.get('password')?.touched"
+      this.usernameError = this.logInForm.controls['username'].errors ? true : false;
+      this.passWordError = this.logInForm.controls['password'].errors ? true : false;
       return;
     }
-
     if (this.logInForm.valid) {
-      this.isError = false;
-      console.log("Form Submitted!");
+      this.usernameError = false;
+      this.passWordError = false;
       let logInModel: LogInModel = {
         username: this.logInForm.value.username,
         password: this.logInForm.value.password,
@@ -51,8 +62,9 @@ export class LogInComponent implements OnInit {
       }
       this.router.navigate(['/home']);
     }
-    else {
-      console.log("Form Not Submitted!");
-    }
+    else {  }
   }
+
+
+  
 }

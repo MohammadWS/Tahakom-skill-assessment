@@ -1,3 +1,10 @@
-<!-- class="container"> -->
+<div [ngClass]="{'ltr': (browserLanguage=== 'en'), 'rtl':(browserLanguage==='ar')} ">
+    <div>
 
-<router-outlet></router-outlet>
+        <button class="lang-btn" (click)="changeLanguage()"
+            [ngClass]="{'lang-btn-ltr': (browserLanguage=== 'en'), 'lang-btn-rtl':(browserLanguage==='ar')}"><i
+                class="bi bi-translate"></i> {{'LOGIN.LANGUAGE'
+            | translate}} </button>
+    </div>
+    <router-outlet></router-outlet>
+</div>
