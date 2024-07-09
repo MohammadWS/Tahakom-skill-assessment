@@ -15,16 +15,7 @@ log-in {
     background-color: #0000;
 }
 
-.rtl {
-    direction: rtl;
-    text-align: right;
-}
 
-
-.ltr {
-    direction: ltr;
-    text-align: left;
-}
 
 
 .lang-btn {
@@ -43,14 +34,3 @@ log-in {
     transform: translateY(-3px);
 }
 
-.lang-btn-ltr {
-    position: absolute;
-    top: 1%;
-    left: 1%;
-}
-
-.lang-btn-rtl {
-    position: absolute;
-    top: 1%;
-    right: 1%;
-}

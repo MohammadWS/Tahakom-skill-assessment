@@ -30,22 +30,9 @@ export class AppComponent {
     }
   }
   changeLanguage() {
-    const body = document.body
-    if (this.browserLanguage === 'en') {
-      body.classList.add('rtl');
-      body.classList.remove('ltr');
-      this.browserLanguage = 'ar'
-      this.translate.use(this.browserLanguage as string);
-      this.translate.use('ar')
-      localStorage.setItem('browserLanguage', this.browserLanguage)
+    const lang = document.documentElement.getAttribute('lang') === 'en' ? 'ar' : 'en'
+    this.translate.use(lang)
+    document.documentElement.setAttribute('lang', lang);
 
-    } else {
-      body.classList.add('ltr');
-      body.classList.remove('rtl');
-      this.browserLanguage = 'en'
-      this.translate.use(this.browserLanguage as string);
-      this.translate.use('en')
-      localStorage.setItem('browserLanguage', this.browserLanguage)
-    }
   }
 }

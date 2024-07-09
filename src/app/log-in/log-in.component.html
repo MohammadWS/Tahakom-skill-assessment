@@ -31,15 +31,14 @@
                                 formControlName="password" [ngClass]="{'rounded-input-error': (passWordError)}">
                         </div>
                         <div class="mt-2 row gx-5">
-                            <div class="col-sm-6 col-md-8 ">
+                            <div class="col-sm-6 d-flex align-items-center ">
                                 <input type="checkbox" formControlName="rememberMe" class="checkbox-btn">
-
-                                <label class="ms-1 label-text">{{'LOGIN.REMEMBERME' | translate}}</label>
+                                <label class="ms-1 label-text px-2">{{'LOGIN.REMEMBERME' | translate}}</label>
                             </div>
                             <div class="text-end col-6 col-md-4 label-text">
                                 {{'LOGIN.FORGOTPASSWORD' | translate}}
                             </div>
-                        </div>
+                        </div>                             
                         <div>
                             <button class="btn mt-3 col-md-12 text-light rounded-btn " (click)="onSubmit()">
                                 {{'LOGIN.SIGNIN' | translate}}
