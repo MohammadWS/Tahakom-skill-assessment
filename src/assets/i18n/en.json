@@ -1,0 +1,18 @@
+{
+    "LOGIN": {
+        "TITLE": "LOGIN",
+        "SUBTITLE": "Please enter your credintials",
+        "ERROR": "Please enter a correct national ID/password",
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "USERNAMEPLACEHOLDER": "Enter your username or national ID",
+        "REMEMBERME": "Remember me",
+        "FORGOTPASSWORD": "Forgot password",
+        "SIGNIN": "Sign In",
+        "LANGUAGE": "عربي"
+    },
+    "HOME": {
+        "WELCOME": "WELCOME SARAH",
+        "HOMEPAGE": "HOME PAGE"
+    }
+}
