@@ -3,9 +3,23 @@
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
 html[lang="ar"] body {
-    direction: rtl;
-  }
-  
-  html[lang="en"] body {
-    direction: ltr;
-  }
+  direction: rtl;
+}
+
+html[lang="en"] body {
+  direction: ltr;
+}
+
+header {
+  background: linear-gradient(90deg, #35142C 0%, #612550 25%, #497284 75%);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  height: 70px;
+  color: white;
+}
+
+.header-logo {
+  max-height: 6rem;
+}

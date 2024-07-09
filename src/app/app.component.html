@@ -1,9 +1,20 @@
-<div>
-    <div>
-
-        <button class="lang-btn" (click)="changeLanguage()"><i
-                class="bi bi-translate"></i> {{'LOGIN.LANGUAGE'
-            | translate}} </button>
+<header class="px-3" *ngIf="!isLogin">
+    <div class="col d-flex align-items-center">
+        <button class="lang-btn" (click)="changeLanguage()">
+            <i class="bi bi-translate"></i> {{'LOGIN.LANGUAGE'
+            | translate}}
+        </button>
+        <img src="assets/images/logoimg.png" alt="Example Image" class="img-fluid navbar-brand header-logo">
     </div>
-    <router-outlet></router-outlet>
-</div>
+    <div class="col text-end">
+        <i class="bi bi-person-circle"></i>
+        {{'HOME.WELCOME'| translate}}
+    </div>
+</header>
+
+<button class="lang-btn position-absolute" (click)="changeLanguage()" *ngIf="isLogin">
+    <i class="bi bi-translate"></i> {{'LOGIN.LANGUAGE'
+    | translate}}
+</button>
+
+<router-outlet></router-outlet>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Approutes } from './app.constans';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,7 @@ export class AppComponent {
   browserLanguage: string;
 
   constructor(
+    private router: Router,
     public translate: TranslateService
   ) {
     const hasLang = localStorage.getItem('browserLanguage') == null;
@@ -29,6 +32,11 @@ export class AppComponent {
       translate.use(this.browserLanguage)
     }
   }
+
+  get isLogin(): boolean {
+    return this.router.url == Approutes.LOGIN || this.router.url === '/' ;
+  }
+
   changeLanguage() {
     const lang = document.documentElement.getAttribute('lang') === 'en' ? 'ar' : 'en'
     this.translate.use(lang)
